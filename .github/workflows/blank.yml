@@ -42,7 +42,7 @@ jobs:
 
       - name: List all added files (one line)
         run: |
-          echo "$steps.changed-files.outputs.added_files was added"
+          echo "${{ steps.changed-files.outputs.added_files }} was added"
 
 
       - name: Run step when a file changes
