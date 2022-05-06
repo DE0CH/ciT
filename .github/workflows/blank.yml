@@ -40,9 +40,12 @@ jobs:
             echo "$file was added"
           done
 
-      - name: List all added files (one line)
-        run: |
-          echo "${{ steps.changed-files.outputs.added_files }} was added"
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.10
+        run: python .github/workflows/tester2.py ${{ steps.changed-files.outputs.added_files }}
+
 
 
       - name: Run step when a file changes
