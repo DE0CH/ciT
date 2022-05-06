@@ -48,8 +48,6 @@ jobs:
       - name: test spaces
         run: python .github/workflows/tester2.py ${{ steps.changed-files.outputs.added_files }}
 
-
-
       - name: Run step when a file changes
         if: contains(steps.changed-files.outputs.modified_files, 'my-file.txt')
         run: |
